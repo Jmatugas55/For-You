@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Mary joy Jugador 💖</title>
+  <link rel="stylesheet" href="index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="hearts-container"></div>
+  <img src="mary.PNG" alt="Cute Couple" class="love-image" />
+  <h1 class="heading">Hi Joy💘</h1>
+  <button onclick="showText()">Tuploka ko </button>
+  <div class="text-container" id="text">
+    I love you joy🤍. <br>dli na mag minaldita bebe na ha <br> from your beloved Jboy  <br> HAHAHAHAHA
+  </div>
+
+  <script>
+    function showText() {
+      const textEl = document.getElementById('text');
+      textEl.classList.add('text-show');
+    }
+
+    // Floating hearts
+    const heartsContainer = document.querySelector('.hearts-container');
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerText = '💖';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      heart.style.opacity = Math.random();
+      heart.style.fontSize = Math.random() * 20 + 20 + 'px';
+      heartsContainer.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+
+</body>
+</html>
